@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "daishogun";
@@ -50,6 +52,10 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
   };
+  programs.kitty.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -68,7 +74,8 @@
   #  /etc/profiles/per-user/daishogun/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
+    NIXOS_OZONE_WL = "1";
   };
 
   # Let Home Manager install and manage itself.

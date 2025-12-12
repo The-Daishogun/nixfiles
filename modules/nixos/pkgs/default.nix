@@ -1,6 +1,43 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim
+    neovim
+    wget
+    alacritty
+    fastfetch
+    btop
+    lsd
+    fzf
+    bat
+    curl
+    vscode
+    nixd
+    alejandra
+    nerd-fonts.jetbrains-mono
+    vazir-fonts
+    google-chrome
+    postman
+  ];
+
   programs.git = {
     enable = true;
+  };
+
+  programs.zsh = {
+    enable = true;
+    autosuggestions = {
+      enable = true;
+    };
+    syntaxHighlighting = {
+      enable = true;
+    };
+    enableCompletion = true;
+    enableBashCompletion = true;
   };
 }
