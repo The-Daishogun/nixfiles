@@ -5,7 +5,8 @@
       # --- Monitor Configuration ---
       monitor = [
         # Example: Primary monitor
-        ", auto, auto, auto"
+        "HDMI-A-1, 2560x1440@120, 0x0, 1"
+        "DP-1, 1920x1080@60, auto, 1, transform, 3"
         # If you have multiple monitors, add them here:
         # "HDMI-A-1, 1920x1080@60, 0x0, 1"
       ];
@@ -59,11 +60,8 @@
           size = 3;
           passes = 1;
         };
-        drop_shadow = true;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
       };
+
 
       # --- Animation ---
       animations = {
@@ -115,10 +113,6 @@
         # Scroll between workspaces
         "SUPER, mouse_down, workspace, e+1"
         "SUPER, mouse_up, workspace, e-1"
-      ];
-
-      # --- Keybindings with Modifiers (bindm) ---
-      bindm = [
         # Move focused window to a workspace (SHIFT + 1-9)
         "SUPER_SHIFT, 1, movetoworkspace, 1"
         "SUPER_SHIFT, 2, movetoworkspace, 2"
@@ -129,7 +123,11 @@
         "SUPER_SHIFT, 7, movetoworkspace, 7"
         "SUPER_SHIFT, 8, movetoworkspace, 8"
         "SUPER_SHIFT, 9, movetoworkspace, 9"
+      ];
 
+      # --- Keybindings with Modifiers (bindm) ---
+
+      bindm = [
         # Mouse bindings for moving/resizing windows
         "SUPER, mouse:272, movewindow" # Click left mouse button (272) to drag
         "SUPER, mouse:273, resizewindow" # Click right mouse button (273) to resize
