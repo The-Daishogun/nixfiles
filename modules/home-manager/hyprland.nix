@@ -1,6 +1,6 @@
 {...}: {
   wayland.windowManager.hyprland = {
-    enable=true;
+    enable = true;
     settings = {
       # --- Monitor Configuration ---
       monitor = [
@@ -61,7 +61,6 @@
           passes = 1;
         };
       };
-
 
       # --- Animation ---
       animations = {

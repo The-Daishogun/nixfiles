@@ -12,5 +12,5 @@ in {
   # to help with suspend corruption issue
   powerManagement.enable = true;
   hardware.nvidia.powerManagement.enable = true;
-  boot.kernelParams = [ "nvidia.NVreg_TemporaryFilePath=/var/tmp" ];
+  boot.kernelParams = ["nvidia.NVreg_TemporaryFilePath=/var/tmp"];
 }

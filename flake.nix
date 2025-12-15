@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
+    nvf.url = "github:notashelf/nvf";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,6 +15,7 @@
   outputs = {
     self,
     nixpkgs,
+    nvf,
     ...
   } @ inputs: {
     nixosConfigurations.daipc = nixpkgs.lib.nixosSystem {
@@ -34,6 +36,7 @@
         ./modules/nixos/zsh.nix
         ./modules/nixos/git.nix
         ./modules/nixos/containers.nix
+        nvf.nixosModules.default
         inputs.home-manager.nixosModules.default
       ];
     };

@@ -1,4 +1,4 @@
-{ pkgs, ...}:{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     waybar # Status bar
     alacritty # Terminal emulator

@@ -55,9 +55,8 @@
       sleep-inactive-ac-type = "nothing";
     };
     "org/gnome/desktop/session" = {
-      idle-delay = mkInt32 [ 900 ];
+      idle-delay = mkInt32 [900];
     };
-
   };
 
   qt = {

@@ -1,4 +1,4 @@
-{...}:{
+{...}: {
   virtualisation.containers.enable = true;
   virtualisation = {
     docker = {
@@ -6,17 +6,17 @@
 
       logDriver = "local";
       daemon = {
-          settings = {
-            registry-mirrors = [
-              "https://registry.docker.ir"
-            ];
-            default-address-pools = [
-              {
-                base = "10.200.0.0/16";
-                size= 24;
-              }
-            ];
-          };
+        settings = {
+          registry-mirrors = [
+            "https://registry.docker.ir"
+          ];
+          default-address-pools = [
+            {
+              base = "10.200.0.0/16";
+              size = 24;
+            }
+          ];
+        };
       };
       autoPrune = {
         enable = true;
