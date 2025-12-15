@@ -38,7 +38,7 @@
         ./modules/nixos/zsh.nix
         ./modules/nixos/git.nix
         ./modules/nixos/containers.nix
-        # ./modules/nixos/nvim.nix
+        # ./modules/nixos/nvim.nix #TODO
       ];
     };
   };
