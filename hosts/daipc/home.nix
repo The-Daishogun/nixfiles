@@ -38,4 +38,9 @@
   };
 
   programs.home-manager.enable = true;
+
+
+  imports = [
+    ../../modules/home-manager/gnome.nix
+  ];
 }

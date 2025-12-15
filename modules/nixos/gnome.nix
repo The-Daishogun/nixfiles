@@ -15,5 +15,12 @@
     gnome-calendar
     geary
     ];
-
+    environment.systemPackages = with pkgs; [
+      gnomeExtensions.appindicator
+      gnomeExtensions.autohide-battery
+      gnomeExtensions.clipboard-history
+      gnomeExtensions.hide-activities-button
+      gnomeExtensions.persian-calendar-2
+      gnomeExtensions.proxy-switcher
+    ];
 }
