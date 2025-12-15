@@ -33,6 +33,7 @@
         ./modules/nixos/networking.nix
         ./modules/nixos/zsh.nix
         ./modules/nixos/git.nix
+        ./modules/nixos/containers.nix
         inputs.home-manager.nixosModules.default
       ];
     };
