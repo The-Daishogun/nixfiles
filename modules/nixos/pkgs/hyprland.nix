@@ -1,5 +1,5 @@
 { pkgs, ...}:{
-  environment.systemPackage = with pkgs; [
+  environment.systemPackages = with pkgs; [
     waybar # Status bar
     alacritty # Terminal emulator
     rofi-wayland # Application launcher/switcher
