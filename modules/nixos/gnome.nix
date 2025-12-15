@@ -13,5 +13,7 @@
     gnome-contacts
     gnome-maps
     gnome-calendar
+    geary
     ];
+
 }
