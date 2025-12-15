@@ -42,8 +42,8 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
+    persistent = true;
     options = "--delete-older-than 5d";
-    auto-optimise-store = true;
   };
   system.stateVersion = "25.11";
 }
