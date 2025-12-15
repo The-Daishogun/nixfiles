@@ -46,5 +46,6 @@
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/zoxide.nix
+    ../../modules/home-manager/hyprland.nix
   ];
 }
