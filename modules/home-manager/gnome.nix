@@ -1,4 +1,8 @@
-{ lib, pkgs, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   dconf.enable = true;
   dconf.settings = with lib.gvariant; {
     "org/gnome/desktop/interface" = {
@@ -10,30 +14,30 @@
     };
     "org/gnome/desktop/input-sources" = {
       sources = [
-        (mkTuple [ "xkb" "us" ]) 
-        (mkTuple [ "xkb" "ir" ])
+        (mkTuple ["xkb" "us"])
+        (mkTuple ["xkb" "ir"])
       ];
-      xkb-options = [ "ctrl:nocaps" ];
+      xkb-options = ["ctrl:nocaps"];
     };
     "org/gnome/shell" = {
-        favorite-apps = [
-          "google-chrome.desktop"
-          "code.desktop"
-          "org.gnome.Nautilus.desktop"
-        ];
-        enabled-extensions = with pkgs; [
-          gnomeExtensions.appindicator.extensionUuid
-          gnomeExtensions.autohide-battery.extensionUuid
-          gnomeExtensions.clipboard-history.extensionUuid
-          gnomeExtensions.hide-activities-button.extensionUuid
-          gnomeExtensions.persian-calendar-2.extensionUuid
-          gnomeExtensions.proxy-switcher.extensionUuid
-        ];
-      };
+      favorite-apps = [
+        "google-chrome.desktop"
+        "code.desktop"
+        "org.gnome.Nautilus.desktop"
+      ];
+      enabled-extensions = with pkgs; [
+        gnomeExtensions.appindicator.extensionUuid
+        gnomeExtensions.autohide-battery.extensionUuid
+        gnomeExtensions.clipboard-history.extensionUuid
+        gnomeExtensions.hide-activities-button.extensionUuid
+        gnomeExtensions.persian-calendar-2.extensionUuid
+        gnomeExtensions.proxy-switcher.extensionUuid
+      ];
+    };
     "org/gnome/mutter" = {
       workspaces-only-on-primary = false;
     };
-    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"= {
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
       binding = "<Super>Return";
       command = "alacritty";
       name = "terminal";
@@ -43,7 +47,7 @@
         "<Super>w"
       ];
     };
-    
+
     "org/gnome/desktop/wm/preferences" = {
       button-layout = "appmenu:minimize,maximize,close";
     };

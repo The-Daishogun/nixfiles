@@ -1,4 +1,4 @@
-{...}:{
+{...}: {
   services.libinput.enable = true;
 
   services.xserver.xkb = {

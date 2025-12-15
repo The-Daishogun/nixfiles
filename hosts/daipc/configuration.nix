@@ -9,7 +9,7 @@
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  
+
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -20,7 +20,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "daipc"; 
+  networking.hostName = "daipc";
 
   time.timeZone = "Asia/Tehran";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -33,7 +33,7 @@
       "networkmanager"
       "wheel"
       "docker"
-      ];
+    ];
     packages = with pkgs; [
     ];
   };
