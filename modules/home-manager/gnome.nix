@@ -33,14 +33,10 @@
     "org/gnome/mutter" = {
       workspaces-only-on-primary = false;
     };
-    "org/gnome/settings-daemon/plugins/media-keys"= {
-      custom-keybindings = {
-        custom0 = {
-          binding = "<Super>Return";
-          command = "alacritty";
-          name = "terminal";
-        };
-      };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0"= {
+      binding = "<Super>Return";
+      command = "alacritty";
+      name = "terminal";
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [

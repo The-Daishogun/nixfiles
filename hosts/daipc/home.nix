@@ -42,5 +42,9 @@
 
   imports = [
     ../../modules/home-manager/gnome.nix
+    ../../modules/home-manager/direnv.nix
+    ../../modules/home-manager/firefox.nix
+    ../../modules/home-manager/fonts.nix
+    ../../modules/home-manager/zoxide.nix
   ];
 }
