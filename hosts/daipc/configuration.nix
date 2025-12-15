@@ -39,5 +39,11 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 5d";
+    auto-optimise-store = true;
+  };
   system.stateVersion = "25.11";
 }
