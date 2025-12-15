@@ -30,6 +30,8 @@
         ./modules/nixos/gnome.nix
         ./modules/nixos/hyprland.nix
         ./modules/nixos/networking.nix
+        ./modules/nixos/zsh.nix
+        ./modules/nixos/git.nix
         inputs.home-manager.nixosModules.default
       ];
     };

@@ -26,7 +26,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   users.users.daishogun = {
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
     isNormalUser = true;
     description = "daishogun";
     extraGroups = [
