@@ -21,6 +21,8 @@
     nixosConfigurations.daipc = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
+        nvf.nixosModules.default
+        inputs.home-manager.nixosModules.default
         ./hosts/daipc/configuration.nix
         ./modules/nixos/pkgs/default.nix
         ./modules/nixos/pkgs/hyprland.nix
@@ -36,8 +38,7 @@
         ./modules/nixos/zsh.nix
         ./modules/nixos/git.nix
         ./modules/nixos/containers.nix
-        nvf.nixosModules.default
-        inputs.home-manager.nixosModules.default
+        # ./modules/nixos/nvim.nix
       ];
     };
   };
