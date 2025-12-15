@@ -14,15 +14,6 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     withUWSM = true;
     xwayland.enable = true;
-    extraPackages = with pkgs; [
-      waybar # Status bar
-      alacritty # Terminal emulator
-      rofi-wayland # Application launcher/switcher
-      swaylock # Screen locker
-      grim # Screenshot tool (capture screen)
-      slurp # Screenshot tool (select region)
-      wlr-randr # Output configuration utility (like xrandr for Wayland)
-    ];
     settings = {
       # --- Monitor Configuration ---
       monitor = [

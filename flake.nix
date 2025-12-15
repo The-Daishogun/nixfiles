@@ -21,6 +21,7 @@
       modules = [
         ./hosts/daipc/configuration.nix
         ./modules/nixos/pkgs/default.nix
+        ./modules/nixos/pkgs/hyprland.nix
         ./modules/nixos/nvidia.nix
         ./modules/nixos/bluetooth.nix
         ./modules/nixos/sound.nix

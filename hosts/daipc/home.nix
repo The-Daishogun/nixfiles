@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+
   home.username = "daishogun";
   home.homeDirectory = "/home/daishogun";
   home.stateVersion = "25.11";
@@ -38,12 +39,12 @@
 
   programs.home-manager.enable = true;
 
+
   imports = [
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/direnv.nix
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/zoxide.nix
-    ../../modules/home-manager/hyprland.nix
   ];
 }
