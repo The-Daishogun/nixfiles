@@ -23,21 +23,6 @@
     vazir-fonts
     google-chrome
     postman
+    gnumake
   ];
-
-  programs.git = {
-    enable = true;
-  };
-
-  programs.zsh = {
-    enable = true;
-    autosuggestions = {
-      enable = true;
-    };
-    syntaxHighlighting = {
-      enable = true;
-    };
-    enableCompletion = true;
-    enableBashCompletion = true;
-  };
 }
