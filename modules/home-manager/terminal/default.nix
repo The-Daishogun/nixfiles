@@ -6,5 +6,6 @@
     ./zoxide.nix
     ./btop.nix
     ./starship.nix
+    ./zellij.nix
   ];
 }
