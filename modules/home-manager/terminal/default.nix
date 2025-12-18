@@ -5,5 +5,6 @@
     ./atuin.nix
     ./zoxide.nix
     ./btop.nix
+    ./starship.nix
   ];
 }
