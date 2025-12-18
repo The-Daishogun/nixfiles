@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    nvf = {
-      url = "github:notashelf/nvf";
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
@@ -17,7 +17,7 @@
   outputs = {
     self,
     nixpkgs,
-    nvf,
+    nixvim,
     home-manager,
     ...
   } @ inputs: {
@@ -46,7 +46,7 @@
       daishogun = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          nvf.homeManagerModules.default
+          nixvim.homeModules.nixvim
           ./hosts/daipc/home.nix
         ];
       };
