@@ -35,8 +35,6 @@
           ./modules/nixos/networking.nix
           ./modules/nixos/zsh.nix
           ./modules/nixos/containers.nix
-          inputs.home-manager.nixosModules.default
-          inputs.nixvim.nixosModules.nixvim
         ];
       };
     };

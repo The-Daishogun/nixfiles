@@ -41,14 +41,13 @@
   imports = [
     ## NEW
     ../../modules/home-manager/terminal
+    ../../modules/home-manager/gui
     ## OLD
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/direnv.nix
     ../../modules/home-manager/firefox.nix
     ../../modules/home-manager/fonts.nix
-    ../../modules/home-manager/zoxide.nix
     ../../modules/home-manager/hyprland.nix
     ../../modules/home-manager/git.nix
-    # ../../modules/home-manager/nvim.nix
   ];
 }

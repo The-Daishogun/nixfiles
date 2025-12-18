@@ -1,5 +1,5 @@
 {...}: {
-  programs.zoxide = {
+  programs.fzf = {
     enable = true;
     enableZshIntegration = true;
   };

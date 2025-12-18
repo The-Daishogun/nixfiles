@@ -1,19 +1,14 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "daishogun" = import ./home.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = {inherit inputs;};
+  #   users = {
+  #     "daishogun" = import ./home.nix;
+  #   };
+  # };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -35,6 +30,10 @@
     packages = with pkgs; [
     ];
   };
+
+  environment.pathsToLink = [
+    "/share/zsh"
+  ];
 
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
