@@ -7,7 +7,7 @@
   home.homeDirectory = "/home/daishogun";
   home.stateVersion = "25.11";
 
-  home.packages = [
+  home.packages = with pkgs; [
     # Maybe you want to install Nerd Fonts with a limited number of fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
@@ -17,6 +17,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
+    hello
   ];
 
   home.file = {

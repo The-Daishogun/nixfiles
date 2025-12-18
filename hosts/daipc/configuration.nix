@@ -8,8 +8,6 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
   home-manager = {
     extraSpecialArgs = {inherit inputs;};
     users = {
@@ -46,4 +44,5 @@
     options = "--delete-older-than 5d";
   };
   system.stateVersion = "25.11";
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }
