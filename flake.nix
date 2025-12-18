@@ -6,7 +6,7 @@
     hyprland.url = "github:hyprwm/Hyprland";
     nvf = {
       url = "github:notashelf/nvf";
-      input.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
       url = "github:nix-community/home-manager";
