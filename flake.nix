@@ -4,7 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
-    nvf.url = "github:notashelf/nvf";
+    nixvim.url = "github:nix-community/nixvim";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -15,14 +15,11 @@
   outputs = {
     self,
     nixpkgs,
-    nvf,
     ...
   } @ inputs: {
     nixosConfigurations.daipc = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
-        nvf.nixosModules.default
-        inputs.home-manager.nixosModules.default
         ./hosts/daipc/configuration.nix
         ./modules/nixos/pkgs/default.nix
         ./modules/nixos/pkgs/hyprland.nix
@@ -36,9 +33,9 @@
         ./modules/nixos/hyprland.nix
         ./modules/nixos/networking.nix
         ./modules/nixos/zsh.nix
-        ./modules/nixos/git.nix
         ./modules/nixos/containers.nix
-        # ./modules/nixos/nvim.nix #TODO
+	      inputs.nixvim.homeModules.nixvim
+        inputs.home-manager.nixosModules.default
       ];
     };
   };

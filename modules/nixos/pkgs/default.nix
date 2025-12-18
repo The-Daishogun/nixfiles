@@ -24,5 +24,6 @@
     google-chrome
     postman
     gnumake
+    gnome-keyring
   ];
 }

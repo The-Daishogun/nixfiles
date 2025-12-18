@@ -79,15 +79,12 @@
       # --- Keybindings (SUPER is the default Mod key) ---
       bind = [
         # Window & Session Controls
-        "SUPER, Q, killactive," # Close window
-        "SUPER, M, exit," # Exit Hyprland
-        "SUPER, C, togglefloating," # Toggle window float
-        "SUPER, P, pseudo, " # Pseudo-tiling
+        "SUPER, W, killactive," # Close window
         "SUPER, J, togglesplit," # Toggle dwindle split
 
         # Launchers
         "SUPER, RETURN, exec, alacritty" # Launch terminal
-        "SUPER, D, exec, rofi -show drun" # Launch application launcher
+        "SUPER, D, exec, hyprlauncher" # Launch application launcher
 
         # Screenshot
         "SUPER, S, exec, grim -g \"$(slurp)\"" # Capture selected area to file
