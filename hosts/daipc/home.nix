@@ -1,9 +1,5 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   nixpkgs.config.allowUnfree = true;
-
 
   home.username = "daishogun";
   home.homeDirectory = "/home/daishogun";
@@ -47,6 +43,7 @@
     ../../modules/home-manager/wm/gnome
     ../../modules/home-manager/wm/hyprland
     ../../modules/home-manager/dev
+    ../../moduels/home-manager/nvim
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/direnv.nix
   ];
