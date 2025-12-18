@@ -1,10 +1,9 @@
 {config, ...}: {
   programs.git = {
     enable = true;
-    userName = "Mohammadreza Varasteh";
-    userEmail = "varastehmr@gmail.com";
-    signing.key = "/home/daishogun/.ssh/id_ed25519.pub";
-    extraConfig = {
+    settings = {
+      user.name ="Mohammadreza Varasteh";
+      user.email =  "varastehmr@gmail.com";
       credential.helper = "store";
     };
   };

@@ -17,7 +17,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    hello
   ];
 
   home.file = {
@@ -40,6 +39,9 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ## NEW
+    ../../modules/home-manager/terminal
+    ## OLD
     ../../modules/home-manager/gnome.nix
     ../../modules/home-manager/direnv.nix
     ../../modules/home-manager/firefox.nix
