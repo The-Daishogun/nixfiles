@@ -1,4 +1,4 @@
-{ pkgs, ...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
     imports = [
@@ -151,85 +151,85 @@
       }
     ];
     autoGroups = {
-    kickstart-highlight-yank = {
-      clear = true;
+      kickstart-highlight-yank = {
+        clear = true;
+      };
     };
-  };
 
-  # [[ Basic Autocommands ]]
-  #  See `:help lua-guide-autocommands`
-  # https://nix-community.github.io/nixvim/NeovimOptions/autoCmd/index.html
-  autoCmd = [
-    # Highlight when yanking (copying) text
-    #  Try it with `yap` in normal mode
-    #  See `:help vim.hl.on_yank()`
-    {
-      event = [ "TextYankPost" ];
-      desc = "Highlight when yanking (copying) text";
-      group = "kickstart-highlight-yank";
-      callback.__raw = ''
-        function()
-          vim.hl.on_yank()
-        end
-      '';
-    }
-  ];
-
-  diagnostic = {
-    settings = {
-      severity_sort = true;
-      float = {
-        border = "rounded";
-        source = "if_many";
-      };
-      underline = {
-        severity.__raw = ''vim.diagnostic.severity.ERROR'';
-      };
-      signs.__raw = ''
-        vim.g.have_nerd_font and {
-          text = {
-            [vim.diagnostic.severity.ERROR] = '󰅚 ',
-            [vim.diagnostic.severity.WARN] = '󰀪 ',
-            [vim.diagnostic.severity.INFO] = '󰋽 ',
-            [vim.diagnostic.severity.HINT] = '󰌶 ',
-          },
-        } or {}
-      '';
-      virtual_text = {
-        source = "if_many";
-        spacing = 2;
-        format.__raw = ''
-          function(diagnostic)
-            local diagnostic_message = {
-              [vim.diagnostic.severity.ERROR] = diagnostic.message,
-              [vim.diagnostic.severity.WARN] = diagnostic.message,
-              [vim.diagnostic.severity.INFO] = diagnostic.message,
-              [vim.diagnostic.severity.HINT] = diagnostic.message,
-            }
-            return diagnostic_message[diagnostic.severity]
+    # [[ Basic Autocommands ]]
+    #  See `:help lua-guide-autocommands`
+    # https://nix-community.github.io/nixvim/NeovimOptions/autoCmd/index.html
+    autoCmd = [
+      # Highlight when yanking (copying) text
+      #  Try it with `yap` in normal mode
+      #  See `:help vim.hl.on_yank()`
+      {
+        event = ["TextYankPost"];
+        desc = "Highlight when yanking (copying) text";
+        group = "kickstart-highlight-yank";
+        callback.__raw = ''
+          function()
+            vim.hl.on_yank()
           end
         '';
+      }
+    ];
+
+    diagnostic = {
+      settings = {
+        severity_sort = true;
+        float = {
+          border = "rounded";
+          source = "if_many";
+        };
+        underline = {
+          severity.__raw = ''vim.diagnostic.severity.ERROR'';
+        };
+        signs.__raw = ''
+          vim.g.have_nerd_font and {
+            text = {
+              [vim.diagnostic.severity.ERROR] = '󰅚 ',
+              [vim.diagnostic.severity.WARN] = '󰀪 ',
+              [vim.diagnostic.severity.INFO] = '󰋽 ',
+              [vim.diagnostic.severity.HINT] = '󰌶 ',
+            },
+          } or {}
+        '';
+        virtual_text = {
+          source = "if_many";
+          spacing = 2;
+          format.__raw = ''
+            function(diagnostic)
+              local diagnostic_message = {
+                [vim.diagnostic.severity.ERROR] = diagnostic.message,
+                [vim.diagnostic.severity.WARN] = diagnostic.message,
+                [vim.diagnostic.severity.INFO] = diagnostic.message,
+                [vim.diagnostic.severity.HINT] = diagnostic.message,
+              }
+              return diagnostic_message[diagnostic.severity]
+            end
+          '';
+        };
       };
     };
-  };
 
-  plugins = {
-    # Detect tabstop and shiftwidth automatically
-    # https://nix-community.github.io/nixvim/plugins/sleuth/index.html
-    guess-indent = {
-      enable = true;
+    plugins = {
+      # Detect tabstop and shiftwidth automatically
+      # https://nix-community.github.io/nixvim/plugins/sleuth/index.html
+      guess-indent = {
+        enable = true;
+      };
     };
-  };
 
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraplugins
-  extraPlugins = [
-    # NOTE: This is where you would add a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
-  ];
+    # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraplugins
+    extraPlugins = [
+      # NOTE: This is where you would add a vim plugin that is not implemented in Nixvim, also see extraConfigLuaPre below
+    ];
 
-  # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfigluapost
-  extraConfigLuaPost = ''
-    -- The line beneath this is called `modeline`. See `:help modeline`
-    -- vim: ts=2 sts=2 sw=2 et
-  '';
+    # https://nix-community.github.io/nixvim/NeovimOptions/index.html#extraconfigluapost
+    extraConfigLuaPost = ''
+      -- The line beneath this is called `modeline`. See `:help modeline`
+      -- vim: ts=2 sts=2 sw=2 et
+    '';
   };
 }
