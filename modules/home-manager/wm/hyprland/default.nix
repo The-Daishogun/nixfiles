@@ -1,4 +1,5 @@
-{...}: {
+{ ... }:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -19,11 +20,12 @@
       #   "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
       # ];
 
-      # --- Window Rules ---
-      windowrulev2 = [
-        "float,class:^(org.gnome.Calculator)$"
-        "forceinput,class:^(alacritty)$"
-        "tile,class:^(Brave-browser)$"
+      windowrule = [
+        # transparent everything!!
+        "opacity 0.97 0.9, class:.*"
+
+        # floats
+        "float, class:org.gnome.calculator"
       ];
 
       # --- Input Configuration (Keyboard & Mouse) ---
