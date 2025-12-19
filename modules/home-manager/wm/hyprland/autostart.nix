@@ -1,0 +1,6 @@
+{ ... }:
+{
+  exec-once = [
+    "hyprpaper"
+  ];
+}

@@ -1,22 +1,11 @@
-{...}: {
+{ ... }:
+{
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # --- Monitor Configuration ---
-      monitor = [
-        # Example: Primary monitor
-        "HDMI-A-1, 2560x1440@120, 0x0, 1"
-        "DP-1, 1920x1080@60, auto, 1, transform, 3"
-        "eDP-1, disabled"
-        # If you have multiple monitors, add them here:
-        # "HDMI-A-1, 1920x1080@60, 0x0, 1"
-      ];
-
-      # --- Autostart Programs ---
-      exec-once = [
-        "waybar"
-        "hyprpaper" # Wallpaper manager (configure below)
-        "swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+      imports = [
+        ./monitors.nix
+        ./autostart.nix
       ];
 
       # --- Environment Variables ---
