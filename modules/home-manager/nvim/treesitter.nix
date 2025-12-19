@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Highlight, edit, and navigate code
   # https://nix-community.github.io/nixvim/plugins/treesitter/index.html
   plugins.treesitter = {
@@ -52,7 +51,7 @@
 
       # Web - other
       nginx
-      
+
       python
       go
     ];

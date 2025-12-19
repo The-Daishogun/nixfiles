@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   # Useful status updates for LSP.
   # https://nix-community.github.io/nixvim/plugins/fidget/index.html
   plugins.fidget = {
@@ -22,7 +21,7 @@
       library = [
         {
           path = "\${3rd}/luv/library";
-          words = [ "vim%.uv" ];
+          words = ["vim%.uv"];
         }
       ];
     };

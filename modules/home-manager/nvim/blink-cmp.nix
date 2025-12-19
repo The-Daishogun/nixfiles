@@ -20,7 +20,6 @@
     enable = true;
 
     settings = {
-
       keymap = {
         # 'default' (recommended) for mappings similar to built-in completions
         #   <c-y> to accept ([y]es) the completion.
