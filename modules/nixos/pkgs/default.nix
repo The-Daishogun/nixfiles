@@ -22,5 +22,6 @@
     postman
     gnumake
     gnome-keyring
+    telegram-desktop
   ];
 }
