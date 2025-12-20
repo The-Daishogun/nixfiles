@@ -6,8 +6,8 @@
       # configure noctalia here
       bar = {
         density = "compact";
-        position = "right";
-        showCapsule = false;
+        position = "top";
+        showCapsule = true;
         widgets = {
           left = [
             {
@@ -51,7 +51,7 @@
       };
       location = {
         monthBeforeDay = true;
-        name = "Marseille, France";
+        name = "Tehran, Iran";
       };
     };
     # this may also be a string or a path to a JSON file,

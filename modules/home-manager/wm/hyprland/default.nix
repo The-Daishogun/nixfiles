@@ -1,5 +1,8 @@
 { ... }:
 {
+  imports = [
+    ./quickshell.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
@@ -10,7 +13,7 @@
       ];
 
       exec-once = [
-        "hyprpaper"
+        "noctalia-shell"
       ];
 
       # --- Environment Variables ---

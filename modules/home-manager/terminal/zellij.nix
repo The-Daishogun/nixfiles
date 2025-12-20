@@ -7,6 +7,7 @@
     settings = {
       default_layout = "compact";
       theme = "dracula";
+      show_startup_tips = false;
 
     };
   };
