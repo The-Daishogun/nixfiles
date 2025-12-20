@@ -44,7 +44,7 @@
         "col.active_border" = "rgb(88c0d0) rgb(81a1c1) 45deg";
         "col.inactive_border" = "rgb(5e81ac)";
         layout = "dwindle";
-        resize_on_boarder = true;
+        resize_on_border = true;
         hover_icon_on_border = true;
       };
 
