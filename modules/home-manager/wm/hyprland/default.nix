@@ -20,14 +20,13 @@
       #   "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
       # ];
 
-      windowrule = [
-        # transparent everything!!
-        "class:.*, opacity 0.97 0.9"
+      windowrulev2 = [
+        "opacity 0.90 0.90, class:.*"
 
-        # floats
-        "float, class:org.gnome.calculator"
+        "float, class:^(org.gnome.Calculator)$"
+        "size 360 510, class:^(org.gnome.Calculator)$"
+        "center, class:^(org.gnome.Calculator)$"
       ];
-
       # --- Input Configuration (Keyboard & Mouse) ---
       input = {
         kb_layout = "us";
