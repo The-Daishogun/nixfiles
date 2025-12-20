@@ -6,6 +6,7 @@
     gnomeExtensions.hide-activities-button
     gnomeExtensions.persian-calendar-2
     gnomeExtensions.proxy-switcher
+    gnomeExtensions.user-themes
   ];
 
   dconf.settings = {
@@ -17,6 +18,7 @@
         gnomeExtensions.hide-activities-button.extensionUuid
         gnomeExtensions.persian-calendar-2.extensionUuid
         gnomeExtensions.proxy-switcher.extensionUuid
+        gnomeExtensions.user-themes.extensionUuid
       ];
     };
   };
