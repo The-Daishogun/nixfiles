@@ -19,10 +19,9 @@
       #   "XCURSOR_THEME,${config.home.pointerCursor.name}"
       #   "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
       # ];
-
+      #! TODO
       windowrulev2 = [
         "opacity 0.90 0.90, class:.*"
-
         "float, class:^(org.gnome.Calculator)$"
         "size 360 510, class:^(org.gnome.Calculator)$"
         "center, class:^(org.gnome.Calculator)$"
@@ -42,17 +41,22 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(88c0d0) rgb(81a1c1) 45deg"; # Nice Nordic colors
+        "col.active_border" = "rgb(88c0d0) rgb(81a1c1) 45deg";
         "col.inactive_border" = "rgb(5e81ac)";
         layout = "dwindle";
+        resize_on_boarder = true;
+        hover_icon_on_border = true;
       };
 
       # --- Decoration ---
       decoration = {
         rounding = 10;
+        active_opacity = 1.0;
+        inactive_opacity = 0.9;
+        dim_modal = true;
         blur = {
           enabled = true;
-          size = 3;
+          size = 8;
           passes = 1;
         };
       };
@@ -61,6 +65,7 @@
       animations = {
         enabled = true;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        workspace_wraparound = true;
         animation = [
           "windows, 1, 7, myBezier, slide"
           "windowsOut, 1, 7, default, slide"
@@ -68,6 +73,19 @@
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
         ];
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        disable_scale_notification = true;
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
+      };
+
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
       };
 
       # --- Keybindings (SUPER is the default Mod key) ---
