@@ -10,4 +10,4 @@ gc:
 
 fmt:
 	# format the nix files in this repo
-	nix fmt ./
+	alejandra .

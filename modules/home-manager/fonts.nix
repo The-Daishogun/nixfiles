@@ -1,10 +1,52 @@
 {...}: {
   fonts.fontconfig = {
     enable = true;
-    defaultFonts = {
-      serif = ["Noto Serif"];
-      sansSerif = ["Noto Sans"];
-      monospace = ["Caskaydia Mono Nerd Font"];
+    configFile = {
+      betterPersian = {
+        enable = true;
+        label = "better-persian";
+        priority = 00;
+        text = ''
+                    <?xml version="1.0"?>
+          <!DOCTYPE fontconfig SYSTEM "urn:fontconfig:fonts.dtd">
+          <fontconfig>
+              <!-- Set "Vazirmatn" as fallback font for all font families -->
+              <!-- https://wiki.archlinux.org/title/Font_configuration/Examples#Arabic -->
+              <alias>
+                  <family>sans-serif</family>
+                  <prefer>
+                      <family>Noto Sans</family>
+                      <family>Open Sans</family>
+                      <family>Droid Sans</family>
+                      <family>Roboto</family>
+                      <family>Vazirmatn</family>
+                      <family>Noto Sans Arabic</family>
+                  </prefer>
+              </alias>
+              <alias>
+                  <family>serif</family>
+                  <prefer>
+                      <family>Noto Serif</family>
+                      <family>Droid Serif</family>
+                      <family>Roboto Slab</family>
+                      <family>Vazirmatn</family>
+                      <family>Noto Sans Arabic</family>
+                  </prefer>
+              </alias>
+              <alias>
+                  <family>monospace</family>
+                  <prefer>
+                      <family>Noto Sans Mono</family>
+                      <family>Inconsolata</family>
+                      <family>Droid Sans Mono</family>
+                      <family>Roboto Mono</family>
+                      <family>Vazir Code</family>
+                  </prefer>
+              </alias>
+          </fontconfig>
+
+        '';
+      };
     };
   };
 }

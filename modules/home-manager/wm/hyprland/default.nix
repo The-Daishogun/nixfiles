@@ -1,21 +1,19 @@
-{...}: {
+{ ... }:
+{
+  imports = [
+    ./quickshell.nix
+  ];
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      # --- Monitor Configuration ---
       monitor = [
-        # Example: Primary monitor
         "HDMI-A-1, 2560x1440@120, 0x0, 1"
         "DP-1, 1920x1080@60, auto, 1, transform, 3"
-        # If you have multiple monitors, add them here:
-        # "HDMI-A-1, 1920x1080@60, 0x0, 1"
+        "eDP-1, disabled"
       ];
 
-      # --- Autostart Programs ---
       exec-once = [
-        "waybar"
-        "hyprpaper" # Wallpaper manager (configure below)
-        "swayidle -w timeout 300 'swaylock -f -c 000000' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'"
+        "noctalia-shell"
       ];
 
       # --- Environment Variables ---
@@ -24,14 +22,13 @@
       #   "XCURSOR_THEME,${config.home.pointerCursor.name}"
       #   "XCURSOR_SIZE,${toString config.home.pointerCursor.size}"
       # ];
-
-      # --- Window Rules ---
+      #! TODO
       windowrulev2 = [
-        "float,class:^(org.gnome.Calculator)$"
-        "forceinput,class:^(alacritty)$"
-        "tile,class:^(Brave-browser)$"
+        "opacity 0.90 0.90, class:.*"
+        "float, class:^(org.gnome.Calculator)$"
+        "size 360 510, class:^(org.gnome.Calculator)$"
+        "center, class:^(org.gnome.Calculator)$"
       ];
-
       # --- Input Configuration (Keyboard & Mouse) ---
       input = {
         kb_layout = "us";
@@ -47,17 +44,22 @@
         gaps_in = 5;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(88c0d0) rgb(81a1c1) 45deg"; # Nice Nordic colors
+        "col.active_border" = "rgb(88c0d0) rgb(81a1c1) 45deg";
         "col.inactive_border" = "rgb(5e81ac)";
         layout = "dwindle";
+        resize_on_border = true;
+        hover_icon_on_border = true;
       };
 
       # --- Decoration ---
       decoration = {
         rounding = 10;
+        active_opacity = 1.0;
+        inactive_opacity = 0.9;
+        dim_modal = true;
         blur = {
           enabled = true;
-          size = 3;
+          size = 8;
           passes = 1;
         };
       };
@@ -66,6 +68,7 @@
       animations = {
         enabled = true;
         bezier = "myBezier, 0.05, 0.9, 0.1, 1.05";
+        workspace_wraparound = true;
         animation = [
           "windows, 1, 7, myBezier, slide"
           "windowsOut, 1, 7, default, slide"
@@ -73,6 +76,19 @@
           "fade, 1, 7, default"
           "workspaces, 1, 6, default"
         ];
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        disable_scale_notification = true;
+        mouse_move_enables_dpms = true;
+        key_press_enables_dpms = true;
+      };
+
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
       };
 
       # --- Keybindings (SUPER is the default Mod key) ---

@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: {
+{lib, ...}: {
   dconf.enable = true;
   dconf.settings = with lib.gvariant; {
     "org/gnome/desktop/interface" = {
@@ -24,14 +20,6 @@
         "google-chrome.desktop"
         "code.desktop"
         "org.gnome.Nautilus.desktop"
-      ];
-      enabled-extensions = with pkgs; [
-        gnomeExtensions.appindicator.extensionUuid
-        gnomeExtensions.autohide-battery.extensionUuid
-        gnomeExtensions.clipboard-history.extensionUuid
-        gnomeExtensions.hide-activities-button.extensionUuid
-        gnomeExtensions.persian-calendar-2.extensionUuid
-        gnomeExtensions.proxy-switcher.extensionUuid
       ];
     };
     "org/gnome/mutter" = {
@@ -57,16 +45,5 @@
     "org/gnome/desktop/session" = {
       idle-delay = mkInt32 [900];
     };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qtct";
-    style.name = "kvantum";
-  };
-
-  xdg.configFile = {
-    "Kvantum/ArcDark".source = "${pkgs.arc-kde-theme}/share/Kvantum/ArcDark";
-    "Kvantum/kvantum.kvconfig".text = "[General]\ntheme=ArcDark";
   };
 }

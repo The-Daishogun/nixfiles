@@ -1,21 +1,14 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  home-manager = {
-    extraSpecialArgs = {inherit inputs;};
-    users = {
-      "daishogun" = import ./home.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = {inherit inputs;};
+  #   users = {
+  #     "daishogun" = import ./home.nix;
+  #   };
+  # };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -38,6 +31,10 @@
     ];
   };
 
+  environment.pathsToLink = [
+    "/share/zsh"
+  ];
+
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
     automatic = true;
@@ -46,4 +43,5 @@
     options = "--delete-older-than 5d";
   };
   system.stateVersion = "25.11";
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }

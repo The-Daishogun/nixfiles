@@ -1,5 +1,9 @@
-{...}: {
+{ pkgs, ...}: {
   networking.networkmanager.enable = true;
+  networking.networkmanager.plugins = [
+    pkgs.networkmanager-openvpn
+  ];
+  programs.openvpn3.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # networking.proxy.default = "http://user:password@proxy:port/";

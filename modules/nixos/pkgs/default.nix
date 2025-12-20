@@ -12,9 +12,6 @@
     alacritty
     fastfetch
     btop
-    lsd
-    fzf
-    bat
     curl
     vscode
     nixd
@@ -25,5 +22,6 @@
     postman
     gnumake
     gnome-keyring
+    telegram-desktop
   ];
 }

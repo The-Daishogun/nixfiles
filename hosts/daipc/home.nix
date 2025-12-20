@@ -1,13 +1,11 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "daishogun";
   home.homeDirectory = "/home/daishogun";
   home.stateVersion = "25.11";
 
-  home.packages = [
+  home.packages = with pkgs; [
     # Maybe you want to install Nerd Fonts with a limited number of fonts?
     # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
 
@@ -39,13 +37,14 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ../../modules/home-manager/gnome.nix
-    ../../modules/home-manager/direnv.nix
-    ../../modules/home-manager/firefox.nix
+    ## NEW
+    ../../modules/home-manager/terminal
+    ../../modules/home-manager/gui
+    ../../modules/home-manager/wm/gnome
+    ../../modules/home-manager/wm/hyprland
+    ../../modules/home-manager/dev
+    ../../modules/home-manager/nvim
     ../../modules/home-manager/fonts.nix
-    ../../modules/home-manager/zoxide.nix
-    ../../modules/home-manager/hyprland.nix
-    ../../modules/home-manager/git.nix
-    ../../modules/home-manager/nvim.nix
+    ../../modules/home-manager/direnv.nix
   ];
 }
