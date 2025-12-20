@@ -22,7 +22,7 @@
 
       windowrule = [
         # transparent everything!!
-        "opacity 0.97 0.9, class:.*"
+        "class:.*, opacity 0.97 0.9"
 
         # floats
         "float, class:org.gnome.calculator"
