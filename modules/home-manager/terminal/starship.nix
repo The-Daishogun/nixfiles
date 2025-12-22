@@ -5,9 +5,8 @@
     settings = {
       add_newline = false;
       format = lib.concatStrings [
-        "$line_break"
-        "$package"
-        "$line_break"
+        "$all"
+        "$directory"
         "$character"
       ];
       scan_timeout = 10;
