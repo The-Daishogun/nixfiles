@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./quickshell.nix
   ];
@@ -14,6 +13,7 @@
 
       exec-once = [
         "noctalia-shell"
+        "hyprlauncher -d"
       ];
 
       # --- Environment Variables ---
@@ -96,14 +96,15 @@
       bind = [
         # Window & Session Controls
         "SUPER, W, killactive," # Close window
-        "SUPER, J, togglesplit," # Toggle dwindle split
 
         # Launchers
         "SUPER, RETURN, exec, alacritty" # Launch terminal
         "SUPER, D, exec, hyprlauncher" # Launch application launcher
-
-        # Screenshot
-        "SUPER, S, exec, grim -g \"$(slurp)\"" # Capture selected area to file
+        "SUPER, B, exec, google-chrome-stable"
+        # Web apps
+        "SUPER, T, exec, google-chrome-stable --app=https://teams.microsoft.com"
+        "SUPER, O, exec, google-chrome-stable --app=https://outlook.office.com"
+        "SUPER, G, exec, google-chrome-stable --app=https://gemini.google.com"
 
         # Focus Movement
         "SUPER, left, movefocus, l"
@@ -135,6 +136,8 @@
         "SUPER_SHIFT, 7, movetoworkspace, 7"
         "SUPER_SHIFT, 8, movetoworkspace, 8"
         "SUPER_SHIFT, 9, movetoworkspace, 9"
+        "L_ALT, TAB, workspace, -1"
+        "L_ALT_SHIFT, TAB, workspace, +1"
       ];
 
       # --- Keybindings with Modifiers (bindm) ---
