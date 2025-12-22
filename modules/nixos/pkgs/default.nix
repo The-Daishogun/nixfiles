@@ -23,5 +23,7 @@
     gnumake
     gnome-keyring
     telegram-desktop
+    unrar
+    zip
   ];
 }
