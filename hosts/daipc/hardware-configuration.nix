@@ -13,7 +13,15 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+  boot.loader.systemd-boot.windows = {
+    "11" = {
+      title = "Windows 11";
+      sortKey = "z_windows";
+      efiDeviceHandle = "HD0b";
+    };
+  };
+  boot.loader.systemd-boot.configurationLimit = 4;
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/7a634895-ade5-4acb-ae62-da824243f94d";
     fsType = "ext4";
