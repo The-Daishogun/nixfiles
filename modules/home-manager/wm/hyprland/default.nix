@@ -14,6 +14,7 @@
       exec-once = [
         "noctalia-shell"
         "hyprlauncher -d"
+        "nm-applet"
       ];
 
       # --- Environment Variables ---
