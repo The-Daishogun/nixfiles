@@ -13,7 +13,7 @@
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
-  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = false; # enable to get the efi device handler for windows
   boot.loader.systemd-boot.windows = {
     "11" = {
       title = "Windows 11";
