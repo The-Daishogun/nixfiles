@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
   ];
@@ -38,4 +42,16 @@
   };
   system.stateVersion = "25.11";
   nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  fileSystems = let
+    ntfs-drives = [
+      "/storage/win"
+    ];
+  in
+    lib.genAttrs ntfs-drives (path: {
+      options = [
+        "uid=1000"
+        # "nofail"
+      ];
+    });
 }
