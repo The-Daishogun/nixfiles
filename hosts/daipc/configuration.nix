@@ -3,13 +3,6 @@
     ./hardware-configuration.nix
   ];
 
-  # home-manager = {
-  #   extraSpecialArgs = {inherit inputs;};
-  #   users = {
-  #     "daishogun" = import ./home.nix;
-  #   };
-  # };
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   programs.nix-ld.enable = true;

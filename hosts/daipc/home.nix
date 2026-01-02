@@ -46,6 +46,5 @@
     ../../modules/home-manager/nvim
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/direnv.nix
-    ../../modules/home-manager/games.nix
   ];
 }
