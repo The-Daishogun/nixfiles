@@ -50,5 +50,24 @@
       position = "center";
       widget-format = "%d %MM";
     };
+    # "org/gnome/shell/extensions/dash-to-dock" = {
+    #   dash-max-icon-size = 32;
+    #   show-show-apps-button = false;
+    #   show-trash = false;
+    #   show-mounts = false;
+    #   hot-keys = false;
+    #   click-action = "focus-minimize-or-appspread";
+    # };
+    "org/gnome/shell/extensions/paperwm" = {
+      open-window-position = 2;
+      show-workspace-indicator = false;
+      window-gap = 10;
+      selection-border-size = 5;
+      selection-border-radius-bottom = 5;
+      selection-border-radius-top = 5;
+      vertical-margin = 10;
+      vertical-margin-bottom = 10;
+      show-open-position-icon = false;
+    };
   };
 }
