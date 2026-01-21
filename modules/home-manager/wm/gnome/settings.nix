@@ -26,9 +26,14 @@
       workspaces-only-on-primary = false;
     };
     "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-      binding = "<Super>Return";
+      binding = "<Super>F12";
       command = "alacritty";
       name = "terminal";
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
+      binding = "<Super>b";
+      command = "google-chrome-stable";
+      name = "browser";
     };
     "org/gnome/desktop/wm/keybindings" = {
       close = [

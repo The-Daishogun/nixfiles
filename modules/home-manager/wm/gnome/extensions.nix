@@ -8,7 +8,6 @@
     gnomeExtensions.proxy-switcher
     gnomeExtensions.user-themes
     gnomeExtensions.paperwm
-    gnomeExtensions.dash-to-dock
   ];
 
   dconf.settings = {
@@ -22,7 +21,6 @@
         gnomeExtensions.proxy-switcher.extensionUuid
         gnomeExtensions.user-themes.extensionUuid
         gnomeExtensions.paperwm.extensionUuid
-        gnomeExtensions.dash-to-dock.extensionUuid
       ];
     };
   };
