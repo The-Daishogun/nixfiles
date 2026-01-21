@@ -41,7 +41,7 @@
     ../../modules/home-manager/terminal
     ../../modules/home-manager/gui
     ../../modules/home-manager/wm/gnome
-    ../../modules/home-manager/wm/hyprland
+    # ../../modules/home-manager/wm/hyprland
     ../../modules/home-manager/dev
     ../../modules/home-manager/nvim
     ../../modules/home-manager/fonts.nix
