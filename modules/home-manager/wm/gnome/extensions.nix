@@ -4,9 +4,10 @@
     gnomeExtensions.autohide-battery
     gnomeExtensions.clipboard-history
     gnomeExtensions.hide-activities-button
-    gnomeExtensions.persian-calendar-2
+    gnomeExtensions.persian-calendar
     gnomeExtensions.proxy-switcher
     gnomeExtensions.user-themes
+    gnomeExtensions.paperwm
   ];
 
   dconf.settings = {
@@ -16,9 +17,10 @@
         gnomeExtensions.autohide-battery.extensionUuid
         gnomeExtensions.clipboard-history.extensionUuid
         gnomeExtensions.hide-activities-button.extensionUuid
-        gnomeExtensions.persian-calendar-2.extensionUuid
+        gnomeExtensions.persian-calendar.extensionUuid
         gnomeExtensions.proxy-switcher.extensionUuid
         gnomeExtensions.user-themes.extensionUuid
+        gnomeExtensions.paperwm.extensionUuid
       ];
     };
   };
