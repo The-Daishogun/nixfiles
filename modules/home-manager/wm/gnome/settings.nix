@@ -45,5 +45,10 @@
     "org/gnome/desktop/session" = {
       idle-delay = mkInt32 [900];
     };
+    "org/gnome/shell/extensions/persian-calendar" = {
+      startup-notification = false;
+      position = "center";
+      widget-format = "%d %MM";
+    };
   };
 }
