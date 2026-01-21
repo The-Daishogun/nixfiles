@@ -8,7 +8,17 @@
   ];
 
   boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.edk2-uefi-shell.enable = true;
+  boot.loader.systemd-boot.windows = {
+    "11" = {
+      efiDeviceHandle = "HD0b";
+      title = "Windows 11 Professional";
+      sortKey = "z_windows";
+    };
+  };
+  boot.loader.systemd-boot.configurationLimit = 4;
   boot.loader.efi.canTouchEfiVariables = true;
+
   programs.nix-ld.enable = true;
 
   networking.hostName = "daipc";
