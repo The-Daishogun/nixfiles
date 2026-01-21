@@ -3,6 +3,7 @@
     enable = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    defaultKeymap = "emacs";
     history = {
       append = true;
       ignoreAllDups = true;
