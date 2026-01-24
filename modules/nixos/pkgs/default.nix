@@ -22,6 +22,7 @@
     unrar
     zip
     yt-dlp
+    tsocks
   ];
   fonts = {
     enableDefaultPackages = true;
