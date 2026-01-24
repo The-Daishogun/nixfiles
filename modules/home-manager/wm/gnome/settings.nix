@@ -64,8 +64,7 @@
     #   click-action = "focus-minimize-or-appspread";
     # };
     "org/gnome/shell/extensions/paperwm" = {
-      open-window-position = 2;
-      show-workspace-indicator = false;
+      open-window-position = 3;
       window-gap = 10;
       selection-border-size = 5;
       selection-border-radius-bottom = 5;
