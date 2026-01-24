@@ -7,5 +7,6 @@
     ./btop.nix
     ./starship.nix
     ./zellij.nix
+    ./jq.nix
   ];
 }
