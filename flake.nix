@@ -45,6 +45,7 @@
           ./modules/nixos/zsh.nix
           ./modules/nixos/containers.nix
           ./modules/nixos/games.nix
+          ./moduels/nixos/tailscale.nix
         ];
       };
     };
