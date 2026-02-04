@@ -6,7 +6,7 @@ daipc:
 
 gc: 
 	# run garbage collection
-	nix-collect-garbage --delete-older-than 5d
+	sudo nix-collect-garbage --delete-older-than 5d
 
 fmt:
 	# format the nix files in this repo
