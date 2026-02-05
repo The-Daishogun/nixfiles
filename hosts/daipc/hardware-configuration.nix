@@ -43,13 +43,14 @@
     fsType = "ext4";
   };
 
+  boot.supportedFilesystems = [ "ntfs" ];
   fileSystems."/storage/win" = {
     device = "/dev/disk/by-uuid/A26C049F6C047079";
-    fsType = "ntfs3";
+    fsType = "ntfs-3g";
     options = [
-      "users"
+      "rw"
+      "uid=1000"
       "nofail"
-      "x-systemd.device-timeout=5s"
     ];
   };
 
