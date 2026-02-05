@@ -43,14 +43,14 @@
     fsType = "ext4";
   };
 
-  fileSystems."/storage/win" = {
-    device = "/dev/disk/by-uuid/A26C049F6C047079";
-    fsType = "ntfs";
-    options = [
-      "ro"
-      "nofail"
-    ];
-  };
+  #  fileSystems."/storage/win" = {
+  #  device = "/dev/disk/by-uuid/A26C049F6C047079";
+  #  fsType = "ntfs";
+  #  options = [
+  #    "ro"
+  #    "nofail"
+  #  ];
+  #};
 
   swapDevices = [ ];
 
