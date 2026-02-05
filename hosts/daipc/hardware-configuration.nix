@@ -43,15 +43,6 @@
     fsType = "ext4";
   };
 
-  #  fileSystems."/storage/win" = {
-  #  device = "/dev/disk/by-uuid/A26C049F6C047079";
-  #  fsType = "ntfs";
-  #  options = [
-  #    "ro"
-  #    "nofail"
-  #  ];
-  #};
-
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
