@@ -38,6 +38,7 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/games.nix
           ./modules/nixos/tailscale.nix
+          ./modules/nixos/niri.nix
         ];
       };
     };
