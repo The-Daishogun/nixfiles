@@ -24,6 +24,7 @@
     yt-dlp
     tsocks
     pika-backup
+    home-manager
   ];
   fonts = {
     enableDefaultPackages = true;
