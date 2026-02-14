@@ -23,6 +23,7 @@
     zip
     yt-dlp
     tsocks
+    pika-backup
   ];
   fonts = {
     enableDefaultPackages = true;
