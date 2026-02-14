@@ -4,6 +4,9 @@ update:
 daipc:
 	sudo nixos-rebuild --flake .#daipc switch
 
+daitoman:
+	sudo nixos-rebuild --flake .#daitoman switch
+
 gc: 
 	# run garbage collection
 	sudo nix-collect-garbage --delete-older-than 5d

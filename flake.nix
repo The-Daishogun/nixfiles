@@ -41,6 +41,26 @@
           ./modules/nixos/niri.nix
         ];
       };
+      daitoman = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/daitoman/configuration.nix
+          ./modules/nixos/pkgs/default.nix
+          ./modules/nixos/bluetooth.nix
+          ./modules/nixos/sound.nix
+          ./modules/nixos/input.nix
+          ./modules/nixos/xdg.nix
+          ./modules/nixos/display.nix
+          ./modules/nixos/gnome.nix
+          ./modules/nixos/networking.nix
+          ./modules/nixos/zsh.nix
+          ./modules/nixos/containers.nix
+          ./modules/nixos/tailscale.nix
+          ./modules/nixos/niri.nix
+          ./modules/nixos/fprintd.nix
+        ];
+      };
+
     };
     homeConfigurations = {
       daishogun = home-manager.lib.homeManagerConfiguration {
@@ -53,3 +73,4 @@
     };
   };
 }
+
