@@ -39,6 +39,7 @@
           ./modules/nixos/games.nix
           ./modules/nixos/tailscale.nix
           ./modules/nixos/niri.nix
+          ./modules/nixos/polkit.nix
         ];
       };
       daitoman = nixpkgs.lib.nixosSystem {
@@ -58,9 +59,9 @@
           ./modules/nixos/tailscale.nix
           ./modules/nixos/niri.nix
           ./modules/nixos/fprintd.nix
+          ./modules/nixos/polkit.nix
         ];
       };
-
     };
     homeConfigurations = {
       daishogun = home-manager.lib.homeManagerConfiguration {
@@ -73,4 +74,3 @@
     };
   };
 }
-
