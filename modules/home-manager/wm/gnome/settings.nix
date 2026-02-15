@@ -35,7 +35,7 @@
       command = "google-chrome-stable";
       name = "browser";
     };
-    "org/gnome/desktop/wm/keybindings" = {
+    "org/gnome/desktop/wm/keyb`indings" = {
       close = [
         "<Super>w"
       ];

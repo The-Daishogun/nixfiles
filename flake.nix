@@ -11,6 +11,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -18,6 +26,8 @@
     nixpkgs,
     nixvim,
     home-manager,
+    dms,
+    niri,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -57,9 +67,9 @@
           ./modules/nixos/zsh.nix
           ./modules/nixos/containers.nix
           ./modules/nixos/tailscale.nix
-          ./modules/nixos/niri.nix
+          # ./modules/nixos/niri.nix
           ./modules/nixos/fprintd.nix
-          ./modules/nixos/polkit.nix
+          # ./modules/nixos/polkit.nix
         ];
       };
     };
@@ -68,6 +78,8 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
           nixvim.homeModules.nixvim
+          # niri.homeModules.niri
+          # dms.homeModules.dank-material-shell
           ./hosts/daipc/home.nix
         ];
       };
