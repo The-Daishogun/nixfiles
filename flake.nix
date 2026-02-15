@@ -11,23 +11,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # dms = {
-    #   url = "github:AvengeMedia/DankMaterialShell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # niri = {
-    #   url = "github:sodiboo/niri-flake";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     self,
     nixpkgs,
-    nixvim,
     home-manager,
-    dms,
-    niri,
     ...
   } @ inputs: {
     nixosConfigurations = {
@@ -48,8 +45,6 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/games.nix
           ./modules/nixos/tailscale.nix
-          ./modules/nixos/niri.nix
-          ./modules/nixos/polkit.nix
         ];
       };
       daitoman = nixpkgs.lib.nixosSystem {
@@ -67,9 +62,7 @@
           ./modules/nixos/zsh.nix
           ./modules/nixos/containers.nix
           ./modules/nixos/tailscale.nix
-          # ./modules/nixos/niri.nix
           ./modules/nixos/fprintd.nix
-          # ./modules/nixos/polkit.nix
         ];
       };
     };
@@ -77,9 +70,9 @@
       daishogun = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          nixvim.homeModules.nixvim
-          # niri.homeModules.niri
-          # dms.homeModules.dank-material-shell
+          inputs.nixvim.homeModules.nixvim
+          inputs.dms.homeModules.dank-material-shell
+          inputs.niri.homeModules.niri
           ./hosts/daipc/home.nix
         ];
       };

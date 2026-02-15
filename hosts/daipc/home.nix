@@ -37,7 +37,6 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ## NEW
     ../../modules/home-manager/terminal
     ../../modules/home-manager/gui
     ../../modules/home-manager/wm/gnome
@@ -45,6 +44,6 @@
     ../../modules/home-manager/nvim
     ../../modules/home-manager/fonts.nix
     ../../modules/home-manager/direnv.nix
-    # ../../modules/home-manager/wm/dms
+    ../../modules/home-manager/wm/dms
   ];
 }
