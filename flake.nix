@@ -45,6 +45,7 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/games.nix
           ./modules/nixos/tailscale.nix
+          ./modules/nixos/niri.nix
         ];
       };
       daitoman = nixpkgs.lib.nixosSystem {
@@ -63,16 +64,18 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/tailscale.nix
           ./modules/nixos/fprintd.nix
+          ./modules/nixos/niri.nix
         ];
       };
     };
     homeConfigurations = {
       daishogun = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs;
+        };
         modules = [
           inputs.nixvim.homeModules.nixvim
-          inputs.dms.homeModules.dank-material-shell
-          inputs.niri.homeModules.niri
           ./hosts/daipc/home.nix
         ];
       };
