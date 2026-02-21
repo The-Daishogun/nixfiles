@@ -5,7 +5,7 @@
       user = {
         name = "Mohammadreza Varasteh";
         email = "varastehmr@gmail.com";
-        signingkey = "/home/daishogun/.ssh/id_ed25519.pub";
+        signingkey = "/home/daishogun/.ssh/id_ed25519";
       };
       color.ui = "auto";
       init.defaultBranch = "main";
