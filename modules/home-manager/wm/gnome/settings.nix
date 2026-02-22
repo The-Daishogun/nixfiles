@@ -35,9 +35,9 @@
       command = "google-chrome-stable";
       name = "browser";
     };
-    "org/gnome/desktop/wm/keyb`indings" = {
+    "org/gnome/desktop/wm/keybindings" = {
       close = [
-        "<Super>w"
+        "<Super>q"
       ];
     };
 
@@ -55,14 +55,7 @@
       position = "center";
       widget-format = "%d %MM";
     };
-    # "org/gnome/shell/extensions/dash-to-dock" = {
-    #   dash-max-icon-size = 32;
-    #   show-show-apps-button = false;
-    #   show-trash = false;
-    #   show-mounts = false;
-    #   hot-keys = false;
-    #   click-action = "focus-minimize-or-appspread";
-    # };
+
     "org/gnome/shell/extensions/paperwm" = {
       open-window-position = 3;
       window-gap = 10;
