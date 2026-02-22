@@ -11,14 +11,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # dms = {
+    #   url = "github:AvengeMedia/DankMaterialShell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+    # niri = {
+    #   url = "github:sodiboo/niri-flake";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
   };
 
   outputs = {
@@ -45,7 +45,7 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/games.nix
           ./modules/nixos/tailscale.nix
-          ./modules/nixos/niri.nix
+          # ./modules/nixos/niri.nix
         ];
       };
       daitoman = nixpkgs.lib.nixosSystem {
@@ -64,7 +64,7 @@
           ./modules/nixos/containers.nix
           ./modules/nixos/tailscale.nix
           ./modules/nixos/fprintd.nix
-          ./modules/nixos/niri.nix
+          # ./modules/nixos/niri.nix
         ];
       };
     };
