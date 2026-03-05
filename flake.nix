@@ -53,6 +53,7 @@
         modules = [
           ./hosts/daitoman/configuration.nix
           ./modules/nixos/pkgs/default.nix
+          ./modules/nixos/pkgs/vpn.nix
           ./modules/nixos/bluetooth.nix
           ./modules/nixos/sound.nix
           ./modules/nixos/input.nix
