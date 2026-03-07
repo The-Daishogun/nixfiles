@@ -1,12 +1,11 @@
-{...}:{
+{...}: {
   programs.dank-material-shell = {
-
-  settings = {
+    settings = {
       theme = "dark";
       dynamicTheming = true;
-      niriLayoutGapsOverride= 22;
-      niriLayoutRadiusOverride= -1;
-      niriLayoutBorderSize= 2;
+      niriLayoutGapsOverride = 22;
+      niriLayoutRadiusOverride = -1;
+      niriLayoutBorderSize = 2;
     };
     session = {
       isLightMode = false;

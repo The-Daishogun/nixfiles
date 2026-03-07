@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
 {
-  imports =
-    [ 
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -14,24 +16,23 @@
   time.timeZone = "Asia/Tehran";
 
   i18n.defaultLocale = "en_US.UTF-8";
- 
+
   users.users.daishogun = {
     shell = pkgs.zsh;
     isNormalUser = true;
     description = "daishogun";
-    extraGroups = [ 
-        "networkmanager"
-        "wheel"
-        "docker"
-     ];
-    packages = with pkgs; [ ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
+    packages = with pkgs; [];
   };
 
   environment.pathsToLink = [
-     "/share/zsh"
+    "/share/zsh"
   ];
-  
- 
+
   nixpkgs.config.allowUnfree = true;
   nix.gc = {
     automatic = true;
@@ -44,5 +45,4 @@
     "nix-command"
     "flakes"
   ];
-
 }
