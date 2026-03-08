@@ -34,4 +34,6 @@
       noto-fonts-cjk-serif
     ];
   };
+
+  programs.firefox.enable = true;
 }
